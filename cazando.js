@@ -126,3 +126,9 @@ function restarTiempo(){
         alert("GAME OVER!")
     }
 }
+
+function reiniciarJuego(){
+    clearInterval(intervalo);
+    limpiarCanvas();
+    iniciarJuego();
+}
