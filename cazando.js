@@ -60,3 +60,39 @@ function iniciarJuego(){
     intervalo = setInterval(restarTiempo, 1000);
 
 }
+
+function limpiarCanvas(){
+    ctx.clearRect(0,0, canvas.width,canvas.heigth);
+}
+
+function moverIzquierda(){
+    gatoX = gatoX - 10;
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+    detectarColision();
+}
+
+function moverDerecha(){
+    gatoX = gatoX + 10;
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+    detectarColision();
+}
+
+function moverArriba(){
+    gatoY = gatoY - 10;
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+    detectarColision();
+}
+
+function moverAbajo(){
+    gatoY = gatoY + 10;
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+    detectarColision();
+}
