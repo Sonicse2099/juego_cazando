@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Juego Cazando</title>
+  <link rel="stylesheet" href="cazando.css">
+</head>
+<body onload="iniciarJuego()">
+
+  <h1>Juego Cazando</h1>
+  <p>Autor: Sonicse</p>
+
+  <canvas id="areaJuego" width="500" height="500"></canvas>
+
+  <div class="panel">
+    <span>Puntos: <span id="puntos">0</span></span>
+    <span>Tiempo: <span id="tiempo">10</span></span>
+  </div>
+
+  <div class="controles">
+    <button onclick="moverArriba()">⬆</button>
+    <br>
+    <button onclick="moverIzquierda()">⬅</button>
+    <button onclick="moverAbajo()">⬇</button>
+    <button onclick="moverDerecha()">➡</button>
+    <br><br>
+
+    <button onclick="reiniciarJuego()">Reiniciar</button>
+  </div>
+
+  <p id="mensaje"></p>
+
+  <script src="cazando.js"></script>
+
+</body>
+</html>
