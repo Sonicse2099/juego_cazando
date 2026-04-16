@@ -96,3 +96,22 @@ function moverAbajo(){
     graficarComida();
     detectarColision();
 }
+
+function detectarColision(){
+    var tocaEnX = (gatoX < comidaX + comidaAncho) && (gatoX + gatoAncho > comidaX);
+    var tocaEnY = (gatoY < comidaY + comidaAlto) && (gatoY + gatoLargo > comidaY);
+
+    if(tocaEnX && tocaEnY){
+        comidaX = obtenerAleatorio(canvas.width  - comidaAncho);
+        comidaY = obtenerAleatorio(canvas.height - comidaAlto);
+
+        puntos = puntos + 1;
+        actualizarPuntos();
+
+        if (puntos >= 6) {
+            clearInterval(intervalo);
+            mostrarMensaje("¡Ganaste!Comiste 6 veces.");
+            alert("¡Ganaste!");
+        }
+    }
+}
