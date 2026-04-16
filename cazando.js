@@ -34,19 +34,19 @@ function dibujarRectangulo(x,y,ancho,alto,color){
     ctx.fillRect(x, y, ancho, alto); 
 }
 function graficarGato() {
-    graficarRectangulo(gatoX, gatoY, gatoAncho, gatoLargo, "white");
+    dibujarRectangulo(gatoX, gatoY, gatoAncho, gatoLargo, "white");
 }
 
 function graficarComida() {
-    graficarRectangulo(comidaX, comidaY, comidaAncho, comidaAlto, "gold");
+    dibujarRectangulo(comidaX, comidaY, comidaAncho, comidaAlto, "gold");
 }
 
 function iniciarJuego(){
     gatoX = (canvas.width / 2) - (gatoAncho / 2);
-    gatoY = (canvas.heigth / 2) - (gatoLargo / 2);
+    gatoY = (canvas.height / 2) - (gatoLargo / 2);
 
     comidaX = (canvas.width / 2) - (comidaAncho / 2);
-    comidaY = (canvas.heigth / 2) - (comidaAlto / 2);
+    comidaY = (canvas.height / 2) - (comidaAlto / 2);
 
     puntos = 0;
     tiempo = 10;
@@ -62,12 +62,12 @@ function iniciarJuego(){
 }
 
 function limpiarCanvas(){
-    ctx.clearRect(0,0, canvas.width,canvas.heigth);
+    ctx.clearRect(0,0, canvas.width,canvas.height);
 }
 
 function moverIzquierda(){
     gatoX = gatoX - 10;
-    limpiarCanva();
+    limpiarCanvas();
     graficarGato();
     graficarComida();
     detectarColision();
@@ -75,7 +75,7 @@ function moverIzquierda(){
 
 function moverDerecha(){
     gatoX = gatoX + 10;
-    limpiarCanva();
+    limpiarCanvas();
     graficarGato();
     graficarComida();
     detectarColision();
@@ -83,7 +83,7 @@ function moverDerecha(){
 
 function moverArriba(){
     gatoY = gatoY - 10;
-    limpiarCanva();
+    limpiarCanvas();
     graficarGato();
     graficarComida();
     detectarColision();
@@ -91,7 +91,7 @@ function moverArriba(){
 
 function moverAbajo(){
     gatoY = gatoY + 10;
-    limpiarCanva();
+    limpiarCanvas();
     graficarGato();
     graficarComida();
     detectarColision();
@@ -102,8 +102,8 @@ function detectarColision(){
     var tocaEnY = (gatoY < comidaY + comidaAlto) && (gatoY + gatoLargo > comidaY);
 
     if(tocaEnX && tocaEnY){
-        comidaX = obtenerAleatorio(canvas.width  - comidaAncho);
-        comidaY = obtenerAleatorio(canvas.height - comidaAlto);
+        comidaX = obtenerAlazar(canvas.width  - comidaAncho);
+        comidaY = obtenerAlazar(canvas.height - comidaAlto);
 
         puntos = puntos + 1;
         actualizarPuntos();
@@ -114,6 +114,10 @@ function detectarColision(){
             alert("Ganaste!");
         }
     }
+}
+
+function actualizarTiempo(){
+    document.getElementById("tiempo").textContent = tiempo;
 }
 
 function restarTiempo(){

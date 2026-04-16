@@ -1,7 +1,7 @@
 body {
   text-align: center;
   font-family: Arial, sans-serif;
-  background: #f0f0f0;
+  background: #029000;
   margin: 0;
   padding: 20px;
 }
@@ -19,7 +19,7 @@ h1 {
 }
 
 canvas {
-  background: white;
+  background: rgb(0, 30, 255);
   border: 2px solid black;
 }
 
