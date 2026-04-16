@@ -110,8 +110,19 @@ function detectarColision(){
 
         if (puntos >= 6) {
             clearInterval(intervalo);
-            mostrarMensaje("¡Ganaste!Comiste 6 veces.");
-            alert("¡Ganaste!");
+            mostrarMensaje("¡Ganaste, Comiste 6 veces!");
+            alert("Ganaste!");
         }
+    }
+}
+
+function restarTiempo(){
+    tiempo = tiempo - 1;
+    actualizarTiempo();
+
+    if(tiempo <= 0){
+        clearInterval(intervalo);
+        mostrarMensaje("Perdiste, el tiempo se te acabo!");
+        alert("GAME OVER!")
     }
 }
