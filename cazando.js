@@ -14,7 +14,7 @@ var comidaX = 0;
 var comidaY = 0;
  
 var puntos   = 0;
-var tiempo   = 10;
+var tiempo   = 120;
 var intervalo = null;
  
 function obtenerAlazar(maximo) {
