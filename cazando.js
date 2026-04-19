@@ -143,7 +143,7 @@ function iniciarJuego() {
     comidaY = obtenerAlazar(canvas.height - comidaAlto);
  
     puntos = 0;
-    tiempo = 10;
+    tiempo = 120;
  
     actualizarPuntos();
     actualizarTiempo();
