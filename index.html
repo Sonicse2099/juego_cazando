@@ -2,34 +2,53 @@
 <html>
 <head>
   <title>Juego Cazando</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="cazando.css">
 </head>
 <body onload="iniciarJuego()">
-
-  <h1>Juego Cazando</h1>
-  <p>Autor: Sonicse</p>
-
-  <canvas id="areaJuego" width="500" height="500"></canvas>
-
-  <div class="panel">
-    <span>Puntos: <span id="puntos">0</span></span>
-    <span>Tiempo: <span id="tiempo">10</span></span>
+ 
+  <div class="stars"></div>
+ 
+  <div class="contenedor">
+    <div class="titulo-wrap">
+      <h1>🐱 CAZANDO</h1>
+      <p class="autor">by Sonicse</p>
+    </div>
+ 
+    <div class="game-wrap">
+      <canvas id="areaJuego" width="500" height="500"></canvas>
+      <div class="scanlines"></div>
+    </div>
+ 
+    <div class="panel">
+      <div class="stat-box">
+        <span class="stat-label">PUNTOS</span>
+        <span class="stat-value" id="puntos">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">TIEMPO</span>
+        <span class="stat-value" id="tiempo">10</span>
+      </div>
+    </div>
+ 
+    <div class="controles">
+      <div class="btn-row">
+        <button class="btn-dir" onclick="moverArriba()">▲</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn-dir" onclick="moverIzquierda()">◀</button>
+        <button class="btn-dir" onclick="moverAbajo()">▼</button>
+        <button class="btn-dir" onclick="moverDerecha()">▶</button>
+      </div>
+    </div>
+ 
+    <button class="btn-reiniciar" onclick="reiniciarJuego()">↺ REINICIAR</button>
+ 
+    <p id="mensaje"></p>
   </div>
-
-  <div class="controles">
-    <button onclick="moverArriba()">⬆</button>
-    <br>
-    <button onclick="moverIzquierda()">⬅</button>
-    <button onclick="moverAbajo()">⬇</button>
-    <button onclick="moverDerecha()">➡</button>
-    <br><br>
-
-    <button onclick="reiniciarJuego()">Reiniciar</button>
-  </div>
-
-  <p id="mensaje"></p>
-
+ 
   <script src="cazando.js"></script>
-
+ 
 </body>
 </html>
