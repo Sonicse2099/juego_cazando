@@ -3,6 +3,13 @@ var ctx = canvas.getContext("2d");
  
 var gatoAncho = 40;
 var gatoLargo = 40;
+
+var imgGato = new Image();
+imgGato.src = "gato.png";
+
+imgGato.onload = function() {
+    iniciarJuego();
+};
  
 var comidaAncho = 20;
 var comidaAlto  = 20;
@@ -62,48 +69,7 @@ function dibujarFondo() {
 }
 
 function graficarGato() {
-    var x = gatoX;
-    var y = gatoY;
-    var w = gatoAncho;
-    var h = gatoLargo;
-
-    ctx.shadowColor = "#00e5ff";
-    ctx.shadowBlur  = 12;
-
-    ctx.fillStyle = "#00e5ff";
-    ctx.fillRect(x + 4, y + 12, w - 8, h - 12);
-
-    ctx.fillRect(x + 2, y + 4, w - 4, 14);
- 
-    ctx.fillRect(x + 2,      y,     6, 6); 
-    ctx.fillRect(x + w - 8,  y,     6, 6);  
-
-    ctx.fillStyle = "#003a44";
-    ctx.fillRect(x + 3,      y + 1,  4, 4);
-    ctx.fillRect(x + w - 7,  y + 1,  4, 4);
-
-    ctx.shadowBlur  = 6;
-    ctx.shadowColor = "#ffffff";
-    ctx.fillStyle   = "#ffffff";
-    ctx.fillRect(x + 5,      y + 6,  5, 5);
-    ctx.fillRect(x + w - 10, y + 6,  5, 5);
- 
-    ctx.fillStyle   = "#001a20";
-    ctx.shadowBlur  = 0;
-    ctx.fillRect(x + 7,      y + 7,  3, 4);
-    ctx.fillRect(x + w - 8,  y + 7,  3, 4);
-
-    ctx.fillStyle = "#ff88aa";
-    ctx.fillRect(x + (w / 2) - 1, y + 12, 3, 2);
-
-    ctx.shadowColor = "#00e5ff";
-    ctx.shadowBlur  = 8;
-    ctx.fillStyle   = "#00e5ff";
-    ctx.fillRect(x + w, y + h - 10, 8, 4);
-    ctx.fillRect(x + w + 6, y + h - 14, 4, 8);
- 
-    ctx.shadowBlur  = 0;
-    ctx.shadowColor = "transparent";
+    ctx.drawImage(imgGato, gatoX, gatoY, gatoAncho, gatoLargo);
 }
 
 function graficarComida() {
