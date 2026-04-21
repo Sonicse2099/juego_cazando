@@ -14,7 +14,7 @@ var comidaX = 0;
 var comidaY = 0;
  
 var puntos   = 0;
-var tiempo   = 120;
+var tiempo   = 15; // yo ya habia cambiado de 10 a 120 mins
 var intervalo = null;
  
 function obtenerAlazar(maximo) {
@@ -198,6 +198,9 @@ function detectarColision() {
  
         puntos = puntos + 1;
         actualizarPuntos();
+
+        tiempo = 15;
+        actualizarTiempo();
  
         if (puntos >= 6) {
             clearInterval(intervalo);
