@@ -7,8 +7,23 @@ var gatoLargo = 40;
 var imgGato = new Image();
 imgGato.src = "gato.png";
 
+var imgComida = new Image();
+imgComida.src = "pez.png";
+
+var imagenesListas = 0;
+
 imgGato.onload = function() {
-    iniciarJuego();
+    imagenesListas = imagenesListas + 1;
+    if (imagenesListas === 2) {
+        iniciarJuego();
+    }
+};
+
+imgComida.onload = function() {
+    imagenesListas = imagenesListas + 1;
+    if (imagenesListas === 2) {
+        iniciarJuego();
+    }
 };
  
 var comidaAncho = 20;
@@ -73,33 +88,7 @@ function graficarGato() {
 }
 
 function graficarComida() {
-    var x = comidaX;
-    var y = comidaY;
-    var w = comidaAncho;
-    var h = comidaAlto;
- 
-    ctx.shadowColor = "#ffd700";
-    ctx.shadowBlur  = 14;
-
-    ctx.fillStyle = "#ffd700";
-    ctx.fillRect(x + 4, y + 4, w - 8, h - 8);
-
-    ctx.fillRect(x + w - 8, y + 2, 8, h - 4);
-
-    ctx.fillRect(x,     y,         6, 6);
-    ctx.fillRect(x,     y + h - 6, 6, 6);
-
-    ctx.shadowBlur = 4;
-    ctx.shadowColor = "#ffffff";
-    ctx.fillStyle  = "#ffffff";
-    ctx.fillRect(x + w - 5, y + 6, 3, 3);
- 
-    ctx.fillStyle  = "#1a0000";
-    ctx.shadowBlur = 0;
-    ctx.fillRect(x + w - 4, y + 7, 2, 2);
- 
-    ctx.shadowBlur  = 0;
-    ctx.shadowColor = "transparent";
+    ctx.drawImage(imgComida, comidaX, comidaY, comidaAncho, comidaAlto);
 }
 
 function iniciarJuego() {
